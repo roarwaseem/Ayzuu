@@ -2,119 +2,156 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Ayzu ❤️</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;500&display=swap');
 
         body {
             margin: 0;
             padding: 0;
-            /* Thoda darker grey background taaki sadness feel ho */
-            background-color: #dcdcdc; 
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             font-family: 'Poppins', sans-serif;
-            text-align: center;
             overflow: hidden;
-            color: #333;
-            position: relative;
+            text-align: center;
         }
 
         .container {
-            /* Box ko thoda transparent kiya hai (0.85) taaki piche k dil nazar ayen */
-            background: rgba(255, 255, 255, 0.85); 
-            padding: 35px 25px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            width: 85%; /* Mobile k hisab se width */
-            max-width: 400px;
-            border-top: 4px solid #777; /* Dark grey border */
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+            max-width: 90%;
+            width: 450px;
             position: relative;
-            z-index: 10; /* Text box sabse upar rahega */
-            backdrop-filter: blur(5px); /* Thoda blur effect piche k liye */
+            z-index: 10;
+            transition: all 0.5s ease;
         }
 
         h1 {
-            font-size: 1.6rem;
-            color: #444;
-            margin-bottom: 20px;
-            font-weight: 600;
+            color: #d63384;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
         }
 
-        p {
-            font-size: 1.1rem;
+        .btn {
+            background-color: #ff4d6d;
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+            transition: transform 0.3s, background 0.3s;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn:hover {
+            background-color: #d63384;
+            transform: scale(1.05);
+        }
+
+        .message-box {
+            display: none; /* Initially hidden */
             color: #555;
-            line-height: 1.7;
-            margin-bottom: 30px;
+            line-height: 1.8;
+            font-size: 1rem;
+            animation: fadeIn 2s;
+        }
+
+        .message-text {
+            text-align: justify;
+            text-align-last: center;
+            margin-bottom: 20px;
         }
 
         .signature {
-            font-size: 1.3rem;
-            color: #777;
-            font-weight: 400;
-            margin-top: 25px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #d63384;
+            margin-top: 15px;
             display: block;
-            font-family: cursive;
         }
 
-        /* Broken Heart Animation CSS */
-        .broken-heart {
+        /* Heart Animation CSS */
+        .heart {
             position: fixed;
-            top: -10vh;
-            /* Dilon ka rang thoda dark kiya taaki saaf dikhen */
-            color: #777; 
-            opacity: 0.8;
-            z-index: 1; /* Text box ke piche rahenge */
+            top: -10px;
+            color: #ff4d6d;
+            font-size: 20px;
             animation: fall linear forwards;
-            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes fall {
-            0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
-            100% { transform: translateY(110vh) rotate(360deg); opacity: 0.2; }
+            to { transform: translateY(105vh); }
         }
 
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Ab rehne do... 💔</h1>
-        <p>
-            Mene bohat dil se banaya tha ye sab tumhare liye. Socha tha tum dekhogi to special feel karogi.
-            <br><br>
-            Mene 2 din tak bola ke open kar lo, dekh lo... par ab choro, kya karna hai dekh kar.
-            <br><br>
-            Ab mann nahi hai. Dfa kro jo bhi tha.
-        </p>
-        <span class="signature">- Wasiiiiiiiii</span>
+    <div class="container" id="mainCard">
+        <div id="initialView">
+            <h1>Hey Ayzu! ❤️</h1>
+            <p style="color: #777; margin-bottom: 25px;">I have something to say...</p>
+            <button class="btn" onclick="openLetter()">Click Me</button>
+        </div>
+
+        <div class="message-box" id="letter">
+            <h1>Happy Valentine's Day!</h1>
+            <div class="message-text">
+                "Dear Ayzu Happy Valentines Day meri life ki sab se khoobsurat cheez hamari dosti se shuru hui aur aj relationship tak pohanch gayi tum mujhse thori si bari ho lekin tumhari maturity aur care mujhe har din aur zyada special feel karwati hai tum meri har choti baat ka khayal rakhti ho tumhe pics banana pasand nahi aur tum chocolate ya mitha bhi nahi khati lekin phir bhi tum meri life ki sab se sweet insaan ho thank you meri best friend meri support system aur meri Ayzu hone ke liye hamesha aise hi rehna simple caring aur bilkul apni jaisi"
+            </div>
+            <span class="signature">Tumhara Wasiiiiiiiii ❤️</span>
+        </div>
     </div>
 
     <script>
-        function createBrokenHeart() {
+        function openLetter() {
+            // Hide the button section
+            document.getElementById('initialView').style.display = 'none';
+            
+            // Show the letter
+            document.getElementById('letter').style.display = 'block';
+            
+            // Start heart rain
+            setInterval(createHeart, 200);
+            
+            // Play a soft pop sound (Optional, browsers might block auto audio)
+            // But visually, the hearts will start falling
+        }
+
+        function createHeart() {
             const heart = document.createElement('div');
-            heart.classList.add('broken-heart');
-            heart.innerHTML = '💔';
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
             
-            // Mobile k liye dilon ka size bada kiya h (20px se 45px k beech)
-            const size = Math.random() * 25 + 20; 
-            heart.style.fontSize = size + "px";
-            
+            // Randomize position and size
             heart.style.left = Math.random() * 100 + "vw";
-            heart.style.animationDuration = Math.random() * 3 + 4 + "s";
+            heart.style.fontSize = Math.random() * 20 + 15 + "px";
+            
+            // Randomize animation duration
+            heart.style.animationDuration = Math.random() * 2 + 3 + "s";
             
             document.body.appendChild(heart);
 
+            // Remove heart after it falls
             setTimeout(() => {
                 heart.remove();
-            }, 7000);
+            }, 5000);
         }
-
-        // Har 300ms baad naya dil girega (tez barish)
-        setInterval(createBrokenHeart, 300);
     </script>
 
 </body>
