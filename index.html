@@ -1,158 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Ayzu ❤️</title>
+    <title>Pink Hello</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;500&display=swap');
-
         body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
-            height: 100vh;
+            background-color: pink;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: 'Poppins', sans-serif;
-            overflow: hidden;
-            text-align: center;
-        }
-
-        .container {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 40px;
-            border-radius: 25px;
-            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
-            max-width: 90%;
-            width: 450px;
-            position: relative;
-            z-index: 10;
-            transition: all 0.5s ease;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
         }
 
         h1 {
-            color: #d63384;
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .btn {
-            background-color: #ff4d6d;
             color: white;
-            border: none;
-            padding: 15px 35px;
-            font-size: 1.2rem;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
-            transition: transform 0.3s, background 0.3s;
-            font-family: 'Poppins', sans-serif;
+            font-size: 50px;
         }
-
-        .btn:hover {
-            background-color: #d63384;
-            transform: scale(1.05);
-        }
-
-        .message-box {
-            display: none; /* Initially hidden */
-            color: #555;
-            line-height: 1.8;
-            font-size: 1rem;
-            animation: fadeIn 2s;
-        }
-
-        .message-text {
-            text-align: justify;
-            text-align-last: center;
-            margin-bottom: 20px;
-        }
-
-        .signature {
-            font-family: 'Dancing Script', cursive;
-            font-size: 1.8rem;
-            color: #d63384;
-            margin-top: 15px;
-            display: block;
-        }
-
-        /* Heart Animation CSS */
-        .heart {
-            position: fixed;
-            top: -10px;
-            color: #ff4d6d;
-            font-size: 20px;
-            animation: fall linear forwards;
-            z-index: 1;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fall {
-            to { transform: translateY(105vh); }
-        }
-
     </style>
 </head>
 <body>
 
-    <div class="container" id="mainCard">
-        <div id="initialView">
-            <h1>Hey Ayzu! ❤️</h1>
-            <p style="color: #777; margin-bottom: 25px;">I have something to say...</p>
-            <button class="btn" onclick="openLetter()">Click Me</button>
-        </div>
-
-        <div class="message-box" id="letter">
-            <h1>Happy Valentine's Day!</h1>
-            <div class="message-text">
-                "Dear Ayzu Happy Valentines Day meri life ki sab se khoobsurat cheez hamari dosti se shuru hui aur aj relationship tak pohanch gayi tum mujhse thori si bari ho lekin tumhari maturity aur care mujhe har din aur zyada special feel karwati hai tum meri har choti baat ka khayal rakhti ho tumhe pics banana pasand nahi aur tum chocolate ya mitha bhi nahi khati lekin phir bhi tum meri life ki sab se sweet insaan ho thank you meri best friend meri support system aur meri Ayzu hone ke liye hamesha aise hi rehna simple caring aur bilkul apni jaisi"
-            </div>
-            <span class="signature">Tumhara Wasiiiiiiiii ❤️</span>
-        </div>
-    </div>
-
-    <script>
-        function openLetter() {
-            // Hide the button section
-            document.getElementById('initialView').style.display = 'none';
-            
-            // Show the letter
-            document.getElementById('letter').style.display = 'block';
-            
-            // Start heart rain
-            setInterval(createHeart, 200);
-            
-            // Play a soft pop sound (Optional, browsers might block auto audio)
-            // But visually, the hearts will start falling
-        }
-
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.innerHTML = '❤️';
-            
-            // Randomize position and size
-            heart.style.left = Math.random() * 100 + "vw";
-            heart.style.fontSize = Math.random() * 20 + 15 + "px";
-            
-            // Randomize animation duration
-            heart.style.animationDuration = Math.random() * 2 + 3 + "s";
-            
-            document.body.appendChild(heart);
-
-            // Remove heart after it falls
-            setTimeout(() => {
-                heart.remove();
-            }, 5000);
-        }
-    </script>
+    <h1>Hello</h1>
 
 </body>
 </html>
