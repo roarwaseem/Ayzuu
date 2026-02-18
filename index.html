@@ -15,43 +15,6 @@
             --sidebar-width: 250px;
         }
 
-        /* --- Welcome Animation Styles --- */
-        #welcome-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 1s ease, visibility 1s;
-        }
-
-        .welcome-text {
-            font-size: 3rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            letter-spacing: 5px;
-            animation: fadeInOut 2.5s ease-in-out forwards;
-            font-family: 'Segoe UI', sans-serif;
-            text-align: center;
-        }
-
-        @keyframes fadeInOut {
-            0% { opacity: 0; transform: scale(0.8); }
-            50% { opacity: 1; transform: scale(1.1); }
-            100% { opacity: 0; transform: scale(1.2); }
-        }
-
-        .hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-        /* ---------------------------------- */
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-color);
@@ -168,10 +131,6 @@
 </head>
 <body>
 
-    <div id="welcome-overlay">
-        <div class="welcome-text">WELCOME AYZA</div>
-    </div>
-
     <div class="sidebar">
         <div class="sidebar-header">
             <h1>📚 Study Hub</h1>
@@ -264,37 +223,309 @@
 
         <div id="sentence" class="content">
             <h2>3️⃣ Sentence Structure – Sab se Important</h2>
+
             <h3>Basic Formula:</h3>
             <p>👉 Subject + Verb + Object</p>
+
             <p><b>Example:</b> Ali eats mango.</p>
-            <p>Ali = Subject, eats = Verb, mango = Object</p>
+            <p>Ali = Subject<br>
+               eats = Verb<br>
+               mango = Object</p>
+
+            <h3>Subject kya hota hai?</h3>
+            <p>Jo kaam kar raha ho.</p>
+            <p><b>Example:</b> She plays cricket.<br>She = Subject</p>
+
+            <h3>Object kya hota hai?</h3>
+            <p>Jis par kaam ho raha ho.</p>
+            <p><b>Example:</b> She plays cricket.<br>Cricket = Object</p>
+
+            <hr>
+
+            <h2>4️⃣ Tenses – Detail</h2>
+            <p>Tense time batata hai.</p>
+
+            <h4>1️⃣ Present Simple</h4>
+            <p><b>Formula:</b> Subject + base verb (s/es with he/she/it)</p>
+            <p>I play<br>He plays</p>
+            <p><b>Example:</b> She goes to school.<br>Rule: He / She / It ke sath verb mein <b>s</b> lagta hai.</p>
+
+            <h4>2️⃣ Past Simple</h4>
+            <p><b>Formula:</b> Subject + verb (2nd form)</p>
+            <p>I played<br>She went<br>He ate</p>
+            <p><b>Example:</b> Ali went to school.</p>
+
+            <h4>3️⃣ Future Simple</h4>
+            <p><b>Formula:</b> Subject + will + verb</p>
+            <p>I will go<br>She will eat</p>
+            <p><b>Example:</b> They will come tomorrow.</p>
+
+            <hr>
+
+            <h2>5️⃣ Common Grammar Rules</h2>
+
+            <h4>He/She/It Rule</h4>
+            <p>He plays<br>She goes<br>It works</p>
+            <p>Lekin:<br>I play<br>They play</p>
+
+            <h4>Is / Am / Are</h4>
+            <p>I → am<br>He/She/It → is<br>We/You/They → are</p>
+
+            <p><b>Example:</b><br>I am a student.<br>She is happy.<br>They are ready.</p>
         </div>
 
         <div id="writing" class="content">
             <h2>📘 Professional Writing – Full Detail</h2>
-            <p>Professional Writing ka matlab hai office ya job ke liye formal tareeke se likhna.</p>
+
+            <p>Professional Writing ka matlab hai:</p>
+            <ul>
+                <li>Formal tareeke se likhna</li>
+                <li>Job, office, bank, company, email, application ke liye likhna</li>
+                <li>Clear, respectful aur professional language use karna</li>
+            </ul>
+            <p>Ye normal chatting jaisa nahi hota.</p>
+
+            <hr>
+
+            <h3>1️⃣ Professional Writing ki Important Qualities</h3>
+
+            <h4>1. Clear (Seedha aur simple)</h4>
+            <p>Sentence short aur clear hona chahiye.</p>
+            <p>❌ I am writing this letter to inform you that I want to tell you something about the issue which is happening from last few days.<br>
+               ✅ I am writing to inform you about the issue.</p>
+
+            <h4>2. Polite (Adab se)</h4>
+            <p>Professional writing mein respect zaroori hai. Words:</p>
+            <ul>
+                <li>Please</li>
+                <li>Kindly</li>
+                <li>I request</li>
+                <li>Thank you</li>
+                <li>I would appreciate</li>
+            </ul>
+
+            <h4>3. Formal Language</h4>
+            <p>❌ I wanna job.<br>✅ I would like to apply for the job.<br><br>
+               ❌ Send me fast.<br>✅ Kindly send the document at your earliest convenience.</p>
+
+            <hr>
+
+            <h3>2️⃣ Professional Writing ke Types</h3>
+            <ul>
+                <li>Email</li>
+                <li>Job Application</li>
+                <li>Complaint Letter</li>
+                <li>Request Letter</li>
+                <li>Report Writing</li>
+            </ul>
+
+            <hr>
+
+            <h3>3️⃣ Professional Email Structure</h3>
+            <p><b>Format:</b> Subject → Greeting → Body → Closing → Name</p>
+            <h4>Example: Job Email</h4>
+            <p>Subject: Application for Sales Officer Position<br><br>
+               Dear Sir/Madam,<br><br>
+               I am writing to apply for the Sales Officer position in your organization. I have strong communication skills and experience in computer operations.<br><br>
+               I would appreciate the opportunity to discuss my application further.<br><br>
+               Thank you for your time and consideration.<br><br>
+               Sincerely,<br>
+               Your Name
+            </p>
+
+            <hr>
+
+            <h3>4️⃣ Job Application Structure</h3>
+            <ul>
+                <li>Start politely</li>
+                <li>Mention job position</li>
+                <li>Mention skills</li>
+                <li>Request interview</li>
+                <li>Close politely</li>
+            </ul>
+            <h4>Example:</h4>
+            <p>Respected Sir,<br><br>
+               I would like to apply for the position of Cashier in your bank. I have good computer skills and two years of experience in pharmacy and data entry.<br><br>
+               I am hardworking and responsible. I hope you will consider my application.<br><br>
+               Thank you.</p>
+
+            <hr>
+
+            <h3>5️⃣ Professional Writing mein kya avoid karein</h3>
+            <ul>
+                <li>Slang words (yaar, bro, wanna)</li>
+                <li>Short forms (u, r, plz)</li>
+                <li>Emojis</li>
+                <li>Very long sentences</li>
+            </ul>
+
+            <h3>6️⃣ Professional Vocabulary (Important Words)</h3>
+            <ul>
+                <li>I would like to apply</li>
+                <li>I am interested in</li>
+                <li>I have experience in</li>
+                <li>I request you</li>
+                <li>Kindly consider</li>
+                <li>Thank you for your time</li>
+            </ul>
         </div>
 
         <div id="poc" class="content">
             <h2>📘 Principles of Communication (POC)</h2>
-            <p>Apna message sahi tareeke se pohanchana hi POC hai.</p>
+
+            <p>Communication ka matlab hai: <br>
+            👉 Apna message dusre tak clear tareeke se pohanchana.</p>
+
+            <p>
+            Agar message samajh aa gaya → communication successful<br>
+            Agar galat samjha gaya → communication fail
+            </p>
+
+            <p>Professional communication mein kuch rules follow kiye jate hain. In rules ko Principles of Communication kehte hain.</p>
+
+            <hr>
+
+            <h3>🔹 7 C’s of Communication (Sab se Important)</h3>
+            <ol>
+                <li>Clarity</li>
+                <li>Conciseness</li>
+                <li>Completeness</li>
+                <li>Correctness</li>
+                <li>Courtesy</li>
+                <li>Concreteness</li>
+                <li>Consideration</li>
+            </ol>
+
+            <hr>
+
+            <h4>1️⃣ Clarity (Saaf aur clear)</h4>
+            <p>Message simple aur seedha hona chahiye.</p>
+            <p>❌ I want to say that maybe the issue is kind of happening.<br>
+               ✅ The system is not working properly.</p>
+            <p>Use simple words and short sentences.</p>
+
+            <h4>2️⃣ Conciseness (Mukhtasar)</h4>
+            <p>Faltu words use na karo.</p>
+            <p>❌ I am writing this letter to inform you that I would like to tell you that I am interested.<br>
+               ✅ I am interested in the position.</p>
+
+            <h4>3️⃣ Completeness (Mukammal maloomat)</h4>
+            <p>Message mein zaroori information honi chahiye.</p>
+            <p>❌ Send me the file.<br>
+               ✅ Please send me the sales report by 5 PM today.</p>
+
+            <h4>4️⃣ Correctness (Sahi grammar)</h4>
+            <p>Grammar aur spelling sahi honi chahiye.</p>
+            <p>❌ She go to office.<br>
+               ✅ She goes to office.</p>
+
+            <h4>5️⃣ Courtesy (Adab aur respect)</h4>
+            <p>Polite language use karo.</p>
+            <p>❌ Send it now.<br>
+               ✅ Kindly send it at your earliest convenience.</p>
+            <p>Words: Please, Kindly, Thank you, I appreciate</p>
+
+            <h4>6️⃣ Concreteness (Specific baat)</h4>
+            <p>General baat nahi, specific baat karo.</p>
+            <p>❌ Sales were low.<br>
+               ✅ Sales decreased by 15% in January.</p>
+
+            <h4>7️⃣ Consideration (Samne wale ko soch kar likhna)</h4>
+            <p>Reader kya chahta hai? Us ke hisaab se likho.</p>
+            <p>Example: Agar customer ko email likh rahe ho → uski problem solve karne wali language use karo.</p>
+
+            <hr>
+
+            <h3>🔹 Communication ke Types</h3>
+            <ul>
+                <li>Verbal (Bol kar)</li>
+                <li>Written (Likha hua)</li>
+                <li>Non-verbal (Body language)</li>
+            </ul>
+
+            <h3>🔹 Professional Communication mein Important Points</h3>
+            <ul>
+                <li>Tone formal ho</li>
+                <li>Message short ho</li>
+                <li>Clear ho</li>
+                <li>Respectful ho</li>
+                <li>Grammar correct ho</li>
+            </ul>
+
+            <h3>🔥 Short Example (POC use karke)</h3>
+            <p>❌ I want money fast.<br>
+               ✅ Kindly process my salary payment by Friday.</p>
+            <p>Yahan: Clarity ✔, Courtesy ✔, Conciseness ✔, Correctness ✔</p>
         </div>
 
         <div id="comprehension" class="content">
             <h2>📘 Comprehension – Full Detail</h2>
-            <p>Paragraph ko samajhna aur sawalon ke jawab dena.</p>
+
+            <p>Comprehension ka matlab hota hai:</p>
+            <ul>
+                <li>Kisi passage (paragraph) ko parhna</li>
+                <li>Uska meaning samajhna</li>
+                <li>Aur us par sawalon ke jawab dena</li>
+            </ul>
+
+            <p>Sirf parhna comprehension nahi hota — samajhna zaroori hai.</p>
+
+            <hr>
+
+            <h3>🔹 Comprehension Mein Kya Check Hota Hai?</h3>
+            <ol>
+                <li>Tum meaning samajh rahe ho ya nahi</li>
+                <li>Main idea pakar sakte ho ya nahi</li>
+                <li>Detail find kar sakte ho ya nahi</li>
+                <li>Vocabulary samajh sakte ho ya nahi</li>
+            </ol>
+
+            <hr>
+
+            <h3>🔹 Comprehension Karne Ka Sahi Tareeka (Step by Step)</h3>
+            <ol>
+                <li><b>Step 1:</b> Pehle poora paragraph ek baar read karo (Jaldi jaldi nahi — araam se).</li>
+                <li><b>Step 2:</b> Difficult words underline karo. Jo words samajh na aaye un ka meaning guess karo sentence se.</li>
+                <li><b>Step 3:</b> Main idea find karo. Yeh paragraph kis bare mein hai? Har paragraph ka ek main idea hota hai.</li>
+                <li><b>Step 4:</b> Questions ko dhyaan se read karo. Answer sirf paragraph se do. Apni taraf se story mat banao.</li>
+            </ol>
+
+            <hr>
+
+            <h3>🔹 Example Se Samjho</h3>
+            <p><b>Passage:</b></p>
+            <blockquote>
+                Ali is a hardworking student. He studies daily and completes his homework on time. His teachers appreciate his efforts. Because of his dedication, he always gets good marks.
+            </blockquote>
+
+            <p><b>Question 1:</b> Why do teachers appreciate Ali?</p>
+            <p><b>Answer:</b> Because he studies daily and completes his homework on time.</p>
+
+            <p><b>Question 2:</b> What kind of student is Ali?</p>
+            <p><b>Answer:</b> Ali is a hardworking student.</p>
+
+            <hr>
+
+            <h3>🔹 Comprehension Ke Types</h3>
+            <ul>
+                <li><b>Literal Questions:</b> Direct answer paragraph mein hota hai.</li>
+                <li><b>Inferential Questions:</b> Thora sochna padta hai.</li>
+                <li><b>Vocabulary Questions:</b> Word ka meaning pocha jata hai.</li>
+            </ul>
+
+            <hr>
+
+            <h3>🔹 Common Mistakes</h3>
+            <ul>
+                <li>Sirf first line parhna</li>
+                <li>Apni taraf se answer banana</li>
+                <li>Question properly na parhna</li>
+                <li>Time waste karna ek hi question par</li>
+            </ul>
         </div>
     </div>
 
     <script>
-        // Animation ko khatam karne ka function
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                const overlay = document.getElementById('welcome-overlay');
-                overlay.classList.add('hidden');
-            }, 3000); // 3 seconds baad screen clear ho jayegi
-        });
-
         function showContent(id) {
             let sections = document.querySelectorAll('.content');
             sections.forEach(sec => sec.style.display = 'none');
