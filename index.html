@@ -1,27 +1,306 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Pink Hello</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Website</title>
     <style>
-        body {
-            background-color: pink;
+        /* Modernized Styles */
+        :root {
+            --primary-color: #0077ff;
+            --secondary-color: #0056cc;
+            --bg-color: #f4f7fa;
+            --card-bg: #ffffff;
+            --text-color: #333;
+            --sidebar-width: 250px;
+        }
+
+        /* --- Welcome Animation Styles --- */
+        #welcome-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
+            z-index: 9999;
+            transition: opacity 1s ease, visibility 1s;
         }
 
-        h1 {
-            color: white;
-            font-size: 50px;
+        .welcome-text {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            letter-spacing: 5px;
+            animation: fadeInOut 2.5s ease-in-out forwards;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.1); }
+            100% { opacity: 0; transform: scale(1.2); }
+        }
+
+        .hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        /* ---------------------------------- */
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: var(--sidebar-width);
+            background: var(--card-bg);
+            padding: 20px;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+            position: fixed;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .sidebar-header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-header h1 {
+            margin: 0;
+            font-size: 1.5em;
+            color: var(--primary-color);
+        }
+
+        .btn {
+            background: #fff;
+            color: var(--text-color);
+            padding: 12px 15px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background: #eef5ff;
+            color: var(--primary-color);
+            border-color: #b3d7ff;
+            transform: translateX(5px);
+        }
+
+        /* Main Content Area */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            padding: 40px;
+            width: calc(100% - var(--sidebar-width));
+        }
+
+        .content {
+            display: none;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+            border-bottom: 2px solid #eef5ff;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            margin-top: 25px;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #eee;
+            margin: 20px 0;
+        }
+
+        blockquote {
+            background: #eef3ff;
+            padding: 15px;
+            border-left: 5px solid var(--primary-color);
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            body { flex-direction: column; }
+            .sidebar { width: 100%; height: auto; position: relative; }
+            .main-content { margin-left: 0; width: 100%; padding: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <h1>Hello</h1>
+    <div id="welcome-overlay">
+        <div class="welcome-text">WELCOME AYZA</div>
+    </div>
 
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h1>📚 Study Hub</h1>
+        </div>
+        <button class="btn" onclick="showContent('grammar')">Grammar</button>
+        <button class="btn" onclick="showContent('sentence')">Sentence Structure</button>
+        <button class="btn" onclick="showContent('writing')">Professional Writing</button>
+        <button class="btn" onclick="showContent('poc')">POC</button>
+        <button class="btn" onclick="showContent('comprehension')">Comprehension</button>
+    </div>
+
+    <div class="main-content">
+        <div id="grammar" class="content" style="display: block;">
+            <h2>📘 GRAMMAR – Full Detail (Basic to Strong)</h2>
+
+            <h3>1️⃣ Grammar Kya Hoti Hai?</h3>
+            <p>Grammar rules ka system hai jo batata hai:</p>
+            <ul>
+                <li>Sentence kaise banega</li>
+                <li>Words ka order kya hoga</li>
+                <li>Verb ka form kaise change hoga</li>
+                <li>Singular / Plural ka use kaise hoga</li>
+            </ul>
+            <p>Agar grammar sahi ho → sentence clear hota hai.<br>
+            Agar grammar galat ho → meaning change ho jata hai.</p>
+            <p>❌ She go to school.<br>
+               ✅ She goes to school.</p>
+
+            <hr>
+
+            <h3>2️⃣ Parts of Speech (Sab se Important Topic)</h3>
+            <p>English ke har word ka ek role hota hai. In roles ko Parts of Speech kehte hain.</p>
+
+            <h4>1️⃣ NOUN (Naam)</h4>
+            <p>Jo kisi insaan, jagah, cheez ya idea ka naam bataye.</p>
+            <ul>
+                <li>Ali</li>
+                <li>Karachi</li>
+                <li>Book</li>
+                <li>Happiness</li>
+                <li>Mobile</li>
+            </ul>
+            <p><b>Example:</b> Ali is reading a book.<br>
+               Ali = noun<br>
+               Book = noun</p>
+
+            <p><b>Noun ke Types:</b></p>
+            <ul>
+                <li><b>Proper Noun:</b> Specific name (Ali, Pakistan, Lahore)</li>
+                <li><b>Common Noun:</b> General name (boy, city, country)</li>
+                <li><b>Abstract Noun:</b> Jo dekha nahi ja sakta (love, honesty, happiness)</li>
+                <li><b>Concrete Noun:</b> Jo dekha ya chhua ja sakta (chair, car, phone)</li>
+            </ul>
+
+            <hr>
+
+            <h4>2️⃣ PRONOUN</h4>
+            <p>Noun ki jagah use hota hai.</p>
+            <p>❌ Ali is a student. Ali is intelligent.<br>
+               ✅ Ali is a student. He is intelligent.</p>
+            <p>Pronouns: I, You, He, She, It, We, They</p>
+
+            <h4>3️⃣ VERB</h4>
+            <p>Verb action ya state batata hai.</p>
+            <p>Examples: Eat, Go, Run, Write, Is, Am, Are</p>
+            <p>She runs daily.<br>
+               He is happy.</p>
+
+            <h4>4️⃣ ADJECTIVE</h4>
+            <p>Noun ko describe karta hai.</p>
+            <p>She is a beautiful girl.</p>
+
+            <h4>5️⃣ ADVERB</h4>
+            <p>Verb ko describe karta hai.</p>
+            <p>He runs fast.</p>
+
+            <h4>6️⃣ PREPOSITION</h4>
+            <p>Position batata hai.</p>
+            <p>Examples: In, On, Under, Between, Behind</p>
+            <p>Book is on the table.</p>
+
+            <h4>7️⃣ CONJUNCTION</h4>
+            <p>Do sentences ya words ko jorta hai.</p>
+            <p>Example: I tried but I failed.</p>
+
+            <h4>8️⃣ INTERJECTION</h4>
+            <p>Feeling show karta hai.</p>
+            <p>Examples: Wow! Oh! Oops!</p>
+        </div>
+
+        <div id="sentence" class="content">
+            <h2>3️⃣ Sentence Structure – Sab se Important</h2>
+            <h3>Basic Formula:</h3>
+            <p>👉 Subject + Verb + Object</p>
+            <p><b>Example:</b> Ali eats mango.</p>
+            <p>Ali = Subject, eats = Verb, mango = Object</p>
+        </div>
+
+        <div id="writing" class="content">
+            <h2>📘 Professional Writing – Full Detail</h2>
+            <p>Professional Writing ka matlab hai office ya job ke liye formal tareeke se likhna.</p>
+        </div>
+
+        <div id="poc" class="content">
+            <h2>📘 Principles of Communication (POC)</h2>
+            <p>Apna message sahi tareeke se pohanchana hi POC hai.</p>
+        </div>
+
+        <div id="comprehension" class="content">
+            <h2>📘 Comprehension – Full Detail</h2>
+            <p>Paragraph ko samajhna aur sawalon ke jawab dena.</p>
+        </div>
+    </div>
+
+    <script>
+        // Animation ko khatam karne ka function
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const overlay = document.getElementById('welcome-overlay');
+                overlay.classList.add('hidden');
+            }, 3000); // 3 seconds baad screen clear ho jayegi
+        });
+
+        function showContent(id) {
+            let sections = document.querySelectorAll('.content');
+            sections.forEach(sec => sec.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+            window.scrollTo({top:0, behavior:'smooth'});
+        }
+    </script>
 </body>
 </html>
