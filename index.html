@@ -3,535 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Website</title>
+    <title>AYZA Final Relationship Exam 💍</title>
     <style>
-        /* Modernized Styles */
         :root {
-            --primary-color: #0077ff;
-            --secondary-color: #0056cc;
-            --bg-color: #f4f7fa;
-            --card-bg: #ffffff;
-            --text-color: #333;
-            --sidebar-width: 250px;
+            --primary: #ff3366;
+            --secondary: #4facfe;
+            --bg-grad: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg-grad);
             margin: 0;
-            padding: 0;
-            display: flex;
-            min-height: 100vh;
+            padding: 10px;
+            color: #2d3436;
         }
 
-        /* Sidebar */
-        .sidebar {
-            width: var(--sidebar-width);
-            background: var(--card-bg);
+        .container {
+            background: rgba(255, 255, 255, 0.98);
             padding: 20px;
-            box-shadow: 2px 0 10px rgba(0,0,0,0.05);
-            position: fixed;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+            border-radius: 25px;
+            max-width: 500px;
+            margin: 10px auto;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
 
-        .sidebar-header {
+        h1 {
+            color: var(--primary);
             text-align: center;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
-            margin-bottom: 10px;
+            font-size: 2rem;
+            margin-bottom: 5px;
+            letter-spacing: -1px;
         }
 
-        .sidebar-header h1 {
-            margin: 0;
-            font-size: 1.5em;
-            color: var(--primary-color);
-        }
-
-        .btn {
-            background: #fff;
-            color: var(--text-color);
-            padding: 12px 15px;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            font-size: 1em;
-            cursor: pointer;
-            text-align: left;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .btn:hover {
-            background: #eef5ff;
-            color: var(--primary-color);
-            border-color: #b3d7ff;
-            transform: translateX(5px);
-        }
-
-        /* Main Content Area */
-        .main-content {
-            margin-left: var(--sidebar-width);
-            padding: 40px;
-            width: calc(100% - var(--sidebar-width));
-        }
-
-        .content {
-            display: none;
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        .subtitle {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #636e72;
+            margin-bottom: 30px;
         }
 
         h2 {
-            color: var(--primary-color);
-            margin-top: 0;
-            border-bottom: 2px solid #eef5ff;
-            padding-bottom: 10px;
+            font-size: 1.2rem;
+            color: #2d3436;
+            border-left: 5px solid var(--primary);
+            padding-left: 10px;
+            margin: 25px 0 15px 0;
         }
 
-        h3 {
-            color: var(--secondary-color);
-            margin-top: 25px;
+        .question-card {
+            background: #fff;
+            border: 1px solid #edf2f7;
+            padding: 18px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
 
-        hr {
-            border: 0;
-            height: 1px;
-            background: #eee;
-            margin: 20px 0;
+        .q-text {
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: block;
+            line-height: 1.4;
         }
 
-        blockquote {
-            background: #eef3ff;
-            padding: 15px;
-            border-left: 5px solid var(--primary-color);
-            margin: 15px 0;
-            border-radius: 0 5px 5px 0;
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
-        ul, ol {
-            padding-left: 20px;
+        .option-label {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            background: #f8f9fa;
+            border: 2px solid #f1f2f6;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
         }
 
-        li {
-            margin-bottom: 8px;
+        input[type="radio"] {
+            display: none; /* Hide default radio */
         }
-        
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            body { flex-direction: column; }
-            .sidebar { width: 100%; height: auto; position: relative; }
-            .main-content { margin-left: 0; width: 100%; padding: 20px; }
+
+        /* Custom selection style */
+        .option-label:has(input:checked) {
+            background: #fff0f3;
+            border-color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .option-label:active { transform: scale(0.96); }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 18px;
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            box-shadow: 0 10px 20px rgba(255, 51, 102, 0.2);
+        }
+
+        #result {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 20px;
+            border: 2px solid var(--primary);
         }
     </style>
 </head>
 <body>
 
-    <div class="sidebar">
-        <div class="sidebar-header">
-            <h1>📚 Study Hub</h1>
+<div class="container">
+    <h1>💖 AYZA Exam 💖</h1>
+    <p class="subtitle">Soch samajh kar sahi option choose karna! 😉</p>
+
+    <div id="mcqs-container"></div>
+
+    <h2>Section B - Dil Ki Baat</h2>
+    <div id="long-questions-container"></div>
+
+    <button onclick="submitExam()">Submit My Love Letter 💌</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+// Specialized Options for each question
+const examData = [
+    { q: "Shaadi ke baad tum:", opts: ["Best friend ban kar rahogi", "Nakhre dikhaogi", "Dono 50-50"] },
+    { q: "Khana kaun banayega?", opts: ["Main banaungi", "Tum banaoge", "Mil kar banayenge 🍳"] },
+    { q: "Free time me kya karenge?", opts: ["Netflix & Chill 🍿", "Lambe safar par jayenge", "Bas baatein karenge"] },
+    { q: "Agar ladai ho jaye to?", opts: ["Main pehle sorry bolungi", "Tumhe manana padega!", "Ice-cream kha kar solve karenge"] },
+    { q: "Weekend plan kya hoga?", opts: ["Ghar par rest", "Shopping aur Outing", "Family ke sath dinner"] },
+    { q: "Travel pasand hai?", opts: ["Mountains 🏔️", "Beaches 🌊", "Ghar hi thik hai"] },
+    { q: "Mujhe ignore karogi?", opts: ["Kabhi nahi!", "Jab gussa hungi tab", "Thoda sa tang karne ke liye"] },
+    { q: "Mujhe kitna pyar karti ho?", opts: ["Dunya se zyada", "Tumhari soch se zyada", "Bata nahi sakti ❤️"] },
+    { q: "Meri sabse achi cheez kya hai?", opts: ["Tumhara nature", "Tumhari looks", "Jis tarah tum care karte ho"] },
+    { q: "Gift kya pasand hai?", opts: ["Surprises 🎁", "Chocolate & Flowers", "Bas tumhara time"] },
+    { q: "Movie ya Adventure?", opts: ["Romantic Movie 🎬", "Hiking/Tracking", "Dono ka mix"] },
+    { q: "Late reply kyun aata hai?", opts: ["Busy hoti hoon", "Jan boojh kar tadpane ke liye", "Internet issue hota hai"] },
+    { q: "Call ya Text?", opts: ["Lambi Calls 📞", "Sweet Texts", "Video Call hamesha"] },
+    { q: "Jealous hoti ho?", opts: ["Haq hai mera!", "Nahi, bharosa hai", "Thoda bohot chalta hai"] },
+    { q: "Mujhe tang karogi?", opts: ["24 ghante!", "Nahi, main shareef hoon", "Sirf weekend par"] },
+    { q: "Shopping pasand hai?", opts: ["Junoon hai!", "Zaroorat ke mutabiq", "Tum dilwaoge to sab pasand hai"] },
+    { q: "Mujhe miss karti ho?", opts: ["Har pal", "Jab baat nahi hoti", "Nahi bolungi (sharam aati hai)"] },
+    { q: "Mujhe samajhti ho?", opts: ["Mujhse behtar koi nahi", "Koshish kar rahi hoon", "Haan, bilkul"] },
+    { q: "Mere sath future kaisa hai?", opts: ["Bilkul Perfect ✨", "Bohat saari khushiyan", "Dream come true"] },
+    { q: "Mujhe priority dogi?", opts: ["Hamesha No. 1", "Dono mil kar manage karenge", "Zaroorat padne par"] },
+    { q: "Respect kitni hai?", opts: ["Sabse zyada", "Equal respect hamesha", "Pyaar ke sath sath"] },
+    { q: "Family kitni important hai?", opts: ["Top Priority", "Humare liye zaroori hain", "Dono ki families ko khush rakhenge"] },
+    { q: "Support karogi?", opts: ["Hamesha sath khadi rahungi", "Har mushkil me", "Aankh band kar ke"] },
+    { q: "Mujhe khush rakhogi?", opts: ["Puri koshish rahegi", "Tumhari smile meri khushi", "InshAllah hamesha"] },
+    { q: "Forever sath rahogi?", opts: ["Maut tak ❤️", "InshAllah", "No doubt about it!"] }
+];
+
+const longQs = [
+    "Shaadi ke baad humari life kaisi hogi?", "Tum meri care kaise karogi?", 
+    "Agar main naraz ho jaun to kya karogi?", "Tum mujhe kitna importance deti ho?", 
+    "Humara dream future kya hoga?", "Tum mujhe kis naam se bulaogi?", 
+    "Tum meri sabse achi habit kya samajhti ho?", "Tum meri buri habit kya change karna chahogi?", 
+    "Hum fight ko kaise solve karenge?", "Ek line me apni feeling batao ❤️"
+];
+
+// Load MCQs
+let mcqHtml = "";
+examData.forEach((item, i) => {
+    mcqHtml += `
+    <div class="question-card">
+        <span class="q-text">${i+1}. ${item.q}</span>
+        <div class="options-grid">
+            ${item.opts.map(opt => `
+                <label class="option-label">
+                    <input type="radio" name="q${i}" value="${opt}">
+                    <span>${opt}</span>
+                </label>
+            `).join('')}
         </div>
-        <button class="btn" onclick="showContent('grammar')">Grammar</button>
-        <button class="btn" onclick="showContent('sentence')">Sentence Structure</button>
-        <button class="btn" onclick="showContent('writing')">Professional Writing</button>
-        <button class="btn" onclick="showContent('poc')">POC</button>
-        <button class="btn" onclick="showContent('comprehension')">Comprehension</button>
-    </div>
+    </div>`;
+});
+document.getElementById("mcqs-container").innerHTML = mcqHtml;
+
+// Load Long Questions
+let longHtml = "";
+longQs.forEach((q, i) => {
+    longHtml += `
+    <div class="question-card">
+        <span class="q-text">${i+26}. ${q}</span>
+        <input type="text" id="s${i+1}" placeholder="Dil se likho...">
+    </div>`;
+});
+document.getElementById("long-questions-container").innerHTML = longHtml;
+
+function submitExam() {
+    let resultDiv = document.getElementById("result");
+    let resultHTML = "<h2 style='text-align:center'>💖 Result Card 💖</h2>";
+
+    examData.forEach((item, i) => {
+        let opts = document.getElementsByName("q"+i);
+        let ans = "Nahi bataya 🙈";
+        opts.forEach(o => { if(o.checked) ans = o.value; });
+        resultHTML += `<p><b>Q${i+1}:</b> ${ans}</p>`;
+    });
+
+    resultHTML += "<hr style='border:1px dashed #ff3366'>";
+
+    for(let i=1; i<=10; i++){
+        let val = document.getElementById("s"+i).value || "Empty!";
+        resultHTML += `<p><b>Q${25+i}:</b> ${val}</p>`;
+    }
+
+    resultHTML += "<p style='text-align:center; color:#ff3366; font-weight:bold; font-size:1.2rem'>📸 Ab iska screenshot le kar bhej do!</p>";
+    
+    resultDiv.innerHTML = resultHTML;
+    resultDiv.style.display = "block";
+    resultDiv.scrollIntoView({ behavior: 'smooth' });
+}
+</script>
 
-    <div class="main-content">
-        <div id="grammar" class="content" style="display: block;">
-            <h2>📘 GRAMMAR – Full Detail (Basic to Strong)</h2>
-
-            <h3>1️⃣ Grammar Kya Hoti Hai?</h3>
-            <p>Grammar rules ka system hai jo batata hai:</p>
-            <ul>
-                <li>Sentence kaise banega</li>
-                <li>Words ka order kya hoga</li>
-                <li>Verb ka form kaise change hoga</li>
-                <li>Singular / Plural ka use kaise hoga</li>
-            </ul>
-            <p>Agar grammar sahi ho → sentence clear hota hai.<br>
-            Agar grammar galat ho → meaning change ho jata hai.</p>
-            <p>❌ She go to school.<br>
-               ✅ She goes to school.</p>
-
-            <hr>
-
-            <h3>2️⃣ Parts of Speech (Sab se Important Topic)</h3>
-            <p>English ke har word ka ek role hota hai. In roles ko Parts of Speech kehte hain.</p>
-
-            <h4>1️⃣ NOUN (Naam)</h4>
-            <p>Jo kisi insaan, jagah, cheez ya idea ka naam bataye.</p>
-            <ul>
-                <li>Ali</li>
-                <li>Karachi</li>
-                <li>Book</li>
-                <li>Happiness</li>
-                <li>Mobile</li>
-            </ul>
-            <p><b>Example:</b> Ali is reading a book.<br>
-               Ali = noun<br>
-               Book = noun</p>
-
-            <p><b>Noun ke Types:</b></p>
-            <ul>
-                <li><b>Proper Noun:</b> Specific name (Ali, Pakistan, Lahore)</li>
-                <li><b>Common Noun:</b> General name (boy, city, country)</li>
-                <li><b>Abstract Noun:</b> Jo dekha nahi ja sakta (love, honesty, happiness)</li>
-                <li><b>Concrete Noun:</b> Jo dekha ya chhua ja sakta (chair, car, phone)</li>
-            </ul>
-
-            <hr>
-
-            <h4>2️⃣ PRONOUN</h4>
-            <p>Noun ki jagah use hota hai.</p>
-            <p>❌ Ali is a student. Ali is intelligent.<br>
-               ✅ Ali is a student. He is intelligent.</p>
-            <p>Pronouns: I, You, He, She, It, We, They</p>
-
-            <h4>3️⃣ VERB</h4>
-            <p>Verb action ya state batata hai.</p>
-            <p>Examples: Eat, Go, Run, Write, Is, Am, Are</p>
-            <p>She runs daily.<br>
-               He is happy.</p>
-
-            <h4>4️⃣ ADJECTIVE</h4>
-            <p>Noun ko describe karta hai.</p>
-            <p>She is a beautiful girl.</p>
-
-            <h4>5️⃣ ADVERB</h4>
-            <p>Verb ko describe karta hai.</p>
-            <p>He runs fast.</p>
-
-            <h4>6️⃣ PREPOSITION</h4>
-            <p>Position batata hai.</p>
-            <p>Examples: In, On, Under, Between, Behind</p>
-            <p>Book is on the table.</p>
-
-            <h4>7️⃣ CONJUNCTION</h4>
-            <p>Do sentences ya words ko jorta hai.</p>
-            <p>Example: I tried but I failed.</p>
-
-            <h4>8️⃣ INTERJECTION</h4>
-            <p>Feeling show karta hai.</p>
-            <p>Examples: Wow! Oh! Oops!</p>
-        </div>
-
-        <div id="sentence" class="content">
-            <h2>3️⃣ Sentence Structure – Sab se Important</h2>
-
-            <h3>Basic Formula:</h3>
-            <p>👉 Subject + Verb + Object</p>
-
-            <p><b>Example:</b> Ali eats mango.</p>
-            <p>Ali = Subject<br>
-               eats = Verb<br>
-               mango = Object</p>
-
-            <h3>Subject kya hota hai?</h3>
-            <p>Jo kaam kar raha ho.</p>
-            <p><b>Example:</b> She plays cricket.<br>She = Subject</p>
-
-            <h3>Object kya hota hai?</h3>
-            <p>Jis par kaam ho raha ho.</p>
-            <p><b>Example:</b> She plays cricket.<br>Cricket = Object</p>
-
-            <hr>
-
-            <h2>4️⃣ Tenses – Detail</h2>
-            <p>Tense time batata hai.</p>
-
-            <h4>1️⃣ Present Simple</h4>
-            <p><b>Formula:</b> Subject + base verb (s/es with he/she/it)</p>
-            <p>I play<br>He plays</p>
-            <p><b>Example:</b> She goes to school.<br>Rule: He / She / It ke sath verb mein <b>s</b> lagta hai.</p>
-
-            <h4>2️⃣ Past Simple</h4>
-            <p><b>Formula:</b> Subject + verb (2nd form)</p>
-            <p>I played<br>She went<br>He ate</p>
-            <p><b>Example:</b> Ali went to school.</p>
-
-            <h4>3️⃣ Future Simple</h4>
-            <p><b>Formula:</b> Subject + will + verb</p>
-            <p>I will go<br>She will eat</p>
-            <p><b>Example:</b> They will come tomorrow.</p>
-
-            <hr>
-
-            <h2>5️⃣ Common Grammar Rules</h2>
-
-            <h4>He/She/It Rule</h4>
-            <p>He plays<br>She goes<br>It works</p>
-            <p>Lekin:<br>I play<br>They play</p>
-
-            <h4>Is / Am / Are</h4>
-            <p>I → am<br>He/She/It → is<br>We/You/They → are</p>
-
-            <p><b>Example:</b><br>I am a student.<br>She is happy.<br>They are ready.</p>
-        </div>
-
-        <div id="writing" class="content">
-            <h2>📘 Professional Writing – Full Detail</h2>
-
-            <p>Professional Writing ka matlab hai:</p>
-            <ul>
-                <li>Formal tareeke se likhna</li>
-                <li>Job, office, bank, company, email, application ke liye likhna</li>
-                <li>Clear, respectful aur professional language use karna</li>
-            </ul>
-            <p>Ye normal chatting jaisa nahi hota.</p>
-
-            <hr>
-
-            <h3>1️⃣ Professional Writing ki Important Qualities</h3>
-
-            <h4>1. Clear (Seedha aur simple)</h4>
-            <p>Sentence short aur clear hona chahiye.</p>
-            <p>❌ I am writing this letter to inform you that I want to tell you something about the issue which is happening from last few days.<br>
-               ✅ I am writing to inform you about the issue.</p>
-
-            <h4>2. Polite (Adab se)</h4>
-            <p>Professional writing mein respect zaroori hai. Words:</p>
-            <ul>
-                <li>Please</li>
-                <li>Kindly</li>
-                <li>I request</li>
-                <li>Thank you</li>
-                <li>I would appreciate</li>
-            </ul>
-
-            <h4>3. Formal Language</h4>
-            <p>❌ I wanna job.<br>✅ I would like to apply for the job.<br><br>
-               ❌ Send me fast.<br>✅ Kindly send the document at your earliest convenience.</p>
-
-            <hr>
-
-            <h3>2️⃣ Professional Writing ke Types</h3>
-            <ul>
-                <li>Email</li>
-                <li>Job Application</li>
-                <li>Complaint Letter</li>
-                <li>Request Letter</li>
-                <li>Report Writing</li>
-            </ul>
-
-            <hr>
-
-            <h3>3️⃣ Professional Email Structure</h3>
-            <p><b>Format:</b> Subject → Greeting → Body → Closing → Name</p>
-            <h4>Example: Job Email</h4>
-            <p>Subject: Application for Sales Officer Position<br><br>
-               Dear Sir/Madam,<br><br>
-               I am writing to apply for the Sales Officer position in your organization. I have strong communication skills and experience in computer operations.<br><br>
-               I would appreciate the opportunity to discuss my application further.<br><br>
-               Thank you for your time and consideration.<br><br>
-               Sincerely,<br>
-               Your Name
-            </p>
-
-            <hr>
-
-            <h3>4️⃣ Job Application Structure</h3>
-            <ul>
-                <li>Start politely</li>
-                <li>Mention job position</li>
-                <li>Mention skills</li>
-                <li>Request interview</li>
-                <li>Close politely</li>
-            </ul>
-            <h4>Example:</h4>
-            <p>Respected Sir,<br><br>
-               I would like to apply for the position of Cashier in your bank. I have good computer skills and two years of experience in pharmacy and data entry.<br><br>
-               I am hardworking and responsible. I hope you will consider my application.<br><br>
-               Thank you.</p>
-
-            <hr>
-
-            <h3>5️⃣ Professional Writing mein kya avoid karein</h3>
-            <ul>
-                <li>Slang words (yaar, bro, wanna)</li>
-                <li>Short forms (u, r, plz)</li>
-                <li>Emojis</li>
-                <li>Very long sentences</li>
-            </ul>
-
-            <h3>6️⃣ Professional Vocabulary (Important Words)</h3>
-            <ul>
-                <li>I would like to apply</li>
-                <li>I am interested in</li>
-                <li>I have experience in</li>
-                <li>I request you</li>
-                <li>Kindly consider</li>
-                <li>Thank you for your time</li>
-            </ul>
-        </div>
-
-        <div id="poc" class="content">
-            <h2>📘 Principles of Communication (POC)</h2>
-
-            <p>Communication ka matlab hai: <br>
-            👉 Apna message dusre tak clear tareeke se pohanchana.</p>
-
-            <p>
-            Agar message samajh aa gaya → communication successful<br>
-            Agar galat samjha gaya → communication fail
-            </p>
-
-            <p>Professional communication mein kuch rules follow kiye jate hain. In rules ko Principles of Communication kehte hain.</p>
-
-            <hr>
-
-            <h3>🔹 7 C’s of Communication (Sab se Important)</h3>
-            <ol>
-                <li>Clarity</li>
-                <li>Conciseness</li>
-                <li>Completeness</li>
-                <li>Correctness</li>
-                <li>Courtesy</li>
-                <li>Concreteness</li>
-                <li>Consideration</li>
-            </ol>
-
-            <hr>
-
-            <h4>1️⃣ Clarity (Saaf aur clear)</h4>
-            <p>Message simple aur seedha hona chahiye.</p>
-            <p>❌ I want to say that maybe the issue is kind of happening.<br>
-               ✅ The system is not working properly.</p>
-            <p>Use simple words and short sentences.</p>
-
-            <h4>2️⃣ Conciseness (Mukhtasar)</h4>
-            <p>Faltu words use na karo.</p>
-            <p>❌ I am writing this letter to inform you that I would like to tell you that I am interested.<br>
-               ✅ I am interested in the position.</p>
-
-            <h4>3️⃣ Completeness (Mukammal maloomat)</h4>
-            <p>Message mein zaroori information honi chahiye.</p>
-            <p>❌ Send me the file.<br>
-               ✅ Please send me the sales report by 5 PM today.</p>
-
-            <h4>4️⃣ Correctness (Sahi grammar)</h4>
-            <p>Grammar aur spelling sahi honi chahiye.</p>
-            <p>❌ She go to office.<br>
-               ✅ She goes to office.</p>
-
-            <h4>5️⃣ Courtesy (Adab aur respect)</h4>
-            <p>Polite language use karo.</p>
-            <p>❌ Send it now.<br>
-               ✅ Kindly send it at your earliest convenience.</p>
-            <p>Words: Please, Kindly, Thank you, I appreciate</p>
-
-            <h4>6️⃣ Concreteness (Specific baat)</h4>
-            <p>General baat nahi, specific baat karo.</p>
-            <p>❌ Sales were low.<br>
-               ✅ Sales decreased by 15% in January.</p>
-
-            <h4>7️⃣ Consideration (Samne wale ko soch kar likhna)</h4>
-            <p>Reader kya chahta hai? Us ke hisaab se likho.</p>
-            <p>Example: Agar customer ko email likh rahe ho → uski problem solve karne wali language use karo.</p>
-
-            <hr>
-
-            <h3>🔹 Communication ke Types</h3>
-            <ul>
-                <li>Verbal (Bol kar)</li>
-                <li>Written (Likha hua)</li>
-                <li>Non-verbal (Body language)</li>
-            </ul>
-
-            <h3>🔹 Professional Communication mein Important Points</h3>
-            <ul>
-                <li>Tone formal ho</li>
-                <li>Message short ho</li>
-                <li>Clear ho</li>
-                <li>Respectful ho</li>
-                <li>Grammar correct ho</li>
-            </ul>
-
-            <h3>🔥 Short Example (POC use karke)</h3>
-            <p>❌ I want money fast.<br>
-               ✅ Kindly process my salary payment by Friday.</p>
-            <p>Yahan: Clarity ✔, Courtesy ✔, Conciseness ✔, Correctness ✔</p>
-        </div>
-
-        <div id="comprehension" class="content">
-            <h2>📘 Comprehension – Full Detail</h2>
-
-            <p>Comprehension ka matlab hota hai:</p>
-            <ul>
-                <li>Kisi passage (paragraph) ko parhna</li>
-                <li>Uska meaning samajhna</li>
-                <li>Aur us par sawalon ke jawab dena</li>
-            </ul>
-
-            <p>Sirf parhna comprehension nahi hota — samajhna zaroori hai.</p>
-
-            <hr>
-
-            <h3>🔹 Comprehension Mein Kya Check Hota Hai?</h3>
-            <ol>
-                <li>Tum meaning samajh rahe ho ya nahi</li>
-                <li>Main idea pakar sakte ho ya nahi</li>
-                <li>Detail find kar sakte ho ya nahi</li>
-                <li>Vocabulary samajh sakte ho ya nahi</li>
-            </ol>
-
-            <hr>
-
-            <h3>🔹 Comprehension Karne Ka Sahi Tareeka (Step by Step)</h3>
-            <ol>
-                <li><b>Step 1:</b> Pehle poora paragraph ek baar read karo (Jaldi jaldi nahi — araam se).</li>
-                <li><b>Step 2:</b> Difficult words underline karo. Jo words samajh na aaye un ka meaning guess karo sentence se.</li>
-                <li><b>Step 3:</b> Main idea find karo. Yeh paragraph kis bare mein hai? Har paragraph ka ek main idea hota hai.</li>
-                <li><b>Step 4:</b> Questions ko dhyaan se read karo. Answer sirf paragraph se do. Apni taraf se story mat banao.</li>
-            </ol>
-
-            <hr>
-
-            <h3>🔹 Example Se Samjho</h3>
-            <p><b>Passage:</b></p>
-            <blockquote>
-                Ali is a hardworking student. He studies daily and completes his homework on time. His teachers appreciate his efforts. Because of his dedication, he always gets good marks.
-            </blockquote>
-
-            <p><b>Question 1:</b> Why do teachers appreciate Ali?</p>
-            <p><b>Answer:</b> Because he studies daily and completes his homework on time.</p>
-
-            <p><b>Question 2:</b> What kind of student is Ali?</p>
-            <p><b>Answer:</b> Ali is a hardworking student.</p>
-
-            <hr>
-
-            <h3>🔹 Comprehension Ke Types</h3>
-            <ul>
-                <li><b>Literal Questions:</b> Direct answer paragraph mein hota hai.</li>
-                <li><b>Inferential Questions:</b> Thora sochna padta hai.</li>
-                <li><b>Vocabulary Questions:</b> Word ka meaning pocha jata hai.</li>
-            </ul>
-
-            <hr>
-
-            <h3>🔹 Common Mistakes</h3>
-            <ul>
-                <li>Sirf first line parhna</li>
-                <li>Apni taraf se answer banana</li>
-                <li>Question properly na parhna</li>
-                <li>Time waste karna ek hi question par</li>
-            </ul>
-        </div>
-    </div>
-
-    <script>
-        function showContent(id) {
-            let sections = document.querySelectorAll('.content');
-            sections.forEach(sec => sec.style.display = 'none');
-            document.getElementById(id).style.display = 'block';
-            window.scrollTo({top:0, behavior:'smooth'});
-        }
-    </script>
 </body>
 </html>
